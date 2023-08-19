@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="リソース名 &apos;samuraitravel/src/main/resources/templates/flagment.html&apos; を &apos;fragment.html&apos; に変更します" description="リソース &apos;flagment.html&apos; の名前変更" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/templates/flagment.html" name="fragment.html" stamp="1687097885122" updateReferences="true"/>
+</session>
