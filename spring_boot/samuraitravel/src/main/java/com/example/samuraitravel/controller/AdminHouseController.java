@@ -65,6 +65,7 @@ public class AdminHouseController {
 		return "admin/houses/show";
 	}
 	
+	// 民宿登録ページ
 	@GetMapping("/register")
 	public String register(Model model) {
 		model.addAttribute("houseRegisterForm", new HouseRegisterForm());
