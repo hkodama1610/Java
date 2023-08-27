@@ -1,0 +1,8 @@
+package com.example.samuraitravel.service;
+
+
+
+@Service
+public class HouseService {
+	private final HouseRepository houseRepository;
+}

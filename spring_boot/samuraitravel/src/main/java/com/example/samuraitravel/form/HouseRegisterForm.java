@@ -4,6 +4,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
@@ -16,11 +17,11 @@ public class HouseRegisterForm {
 	@NotBlank(message = "説明を入力してください")
 	private String description;
 	
-	@NotBlank(message = "宿泊料金を入力してください。")
+	@NotNull(message = "宿泊料金を入力してください。")
 	@Min(value = 1,message = "宿泊料金は1円以上に設定してください。")
 	private Integer price;
 	
-	@NotBlank(message = "定員を入力してください")
+	@NotNull(message = "定員を入力してください")
 	@Min(value = 1, message = "定員は1人以上に設定してください。")
 	private Integer capacity;
 	

@@ -6,14 +6,20 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.samuraitravel.entity.House;
 import com.example.samuraitravel.form.HouseRegisterForm;
 import com.example.samuraitravel.repository.HouseRepository;
+import com.example.samuraitravel.service.HouseService;
 
 @Controller
 // ルートパスの基準値を設定している、このクラス内でのパスはhouses/〇〇となる
@@ -21,10 +27,12 @@ import com.example.samuraitravel.repository.HouseRepository;
 public class AdminHouseController {
 	// 定数の場合はfinalを宣言
 	private final HouseRepository houseRepository;
+	private final HouseService houseService;
 	
 	// コンストラクタ、本来は@Autowiredが必要→コンストラクタが一つの場合は省略可能
-	public AdminHouseController(HouseRepository houseRepository) {
+	public AdminHouseController(HouseRepository houseRepository, HouseService houseService) {
 		this.houseRepository = houseRepository;
+		this.houseService = houseService;
 	}
 	
 	// 宿泊施設一覧表示
@@ -71,4 +79,26 @@ public class AdminHouseController {
 		model.addAttribute("houseRegisterForm", new HouseRegisterForm());
 		return "admin/houses/register";
 	}
+	
+	// 民宿登録
+	@PostMapping("/create")
+	public String create(@ModelAttribute @Validated HouseRegisterForm houseRegisterForm, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+		if(bindingResult.hasErrors()) {
+			return "admin/houses/register";
+		}
+		
+		houseService.create(houseRegisterForm);
+		redirectAttributes.addFlashAttribute("successMessgae", "民宿を登録しました。");
+		
+		return "redirect:/admin/houses";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

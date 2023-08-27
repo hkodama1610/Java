@@ -1,0 +1,22 @@
+package com.example.samuraitravel.service;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.example.samuraitravel.form.HouseRegisterForm;
+import com.example.samuraitravel.repository.HouseRepository;
+
+@Service
+public class HouseService {
+	private final HouseRepository houseRepository;
+	
+	public HouseService(HouseRepository houseRepository) {
+		this.houseRepository = houseRepository;
+	}
+	
+	@Transactional
+	public void create(HouseRegisterForm houseRegisterForm) {
+		House house = new House();
+		
+	}
+}
