@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>samuraitravel</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<vrsion>0.0.1-SNAPSHOT</vrsion>
 	<name>samuraitravel</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -90,5 +90,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
