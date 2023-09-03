@@ -323,3 +323,66 @@ org.osgi.framework.BundleException: Could not resolve module: org.eclipse.wildwe
 
 !ENTRY org.eclipse.jface.text 2 0 2023-09-02 21:26:04.611
 !MESSAGE 重複テンプレート ID: 'zigen.plugin.db.template.sql.case'
+!SESSION 2023-09-03 16:33:21.092 -----------------------------------------------
+eclipse.buildId=4.27.0.20230309-1200
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=ja_JP
+Framework arguments:  -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -keyring /Users/hirotokodama/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -data /Users/hirotokodama/Documents/Git/Java/spring_boot/samuraitravel -product org.eclipse.epp.package.java.product -keyring /Users/hirotokodama/.eclipse_keyring
+
+!ENTRY org.eclipse.lsp4e.debug 4 0 2023-09-03 16:33:22.510
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.lsp4e.debug [534]
+  Unresolved requirement: Require-Bundle: org.eclipse.lsp4j.jsonrpc.debug; bundle-version="[0.19.0,0.20.0)"
+    -> Bundle-SymbolicName: org.eclipse.lsp4j.jsonrpc.debug; bundle-version="0.19.0.v20221118-0359"
+       org.eclipse.lsp4j.jsonrpc.debug [539]
+         Unresolved requirement: Import-Package: com.google.gson; version="[2.9.1,2.10.0)"
+  Unresolved requirement: Require-Bundle: org.eclipse.lsp4j.jsonrpc; bundle-version="[0.19.0,0.20.0)"
+    -> Bundle-SymbolicName: org.eclipse.lsp4j.jsonrpc; bundle-version="0.19.0.v20221118-0359"
+       org.eclipse.lsp4j.jsonrpc [248]
+         Unresolved requirement: Import-Package: com.google.gson; version="[2.9.1,2.10.0)"
+  Unresolved requirement: Require-Bundle: org.eclipse.lsp4j.debug; bundle-version="[0.19.0,0.20.0)"
+    -> Bundle-SymbolicName: org.eclipse.lsp4j.debug; bundle-version="0.19.0.v20221118-0359"
+       org.eclipse.lsp4j.debug [537]
+         Unresolved requirement: Import-Package: com.google.gson; version="[2.9.1,2.10.0)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.wildwebdeveloper 4 0 2023-09-03 16:33:22.514
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.wildwebdeveloper [554]
+  Unresolved requirement: Require-Bundle: org.eclipse.lsp4e.debug; bundle-version="0.9.0"
+    -> Bundle-SymbolicName: org.eclipse.lsp4e.debug; bundle-version="0.15.0.202211181112"; singleton:="true"
+       org.eclipse.lsp4e.debug [534]
+         Unresolved requirement: Require-Bundle: org.eclipse.lsp4j.jsonrpc; bundle-version="[0.19.0,0.20.0)"
+           -> Bundle-SymbolicName: org.eclipse.lsp4j.jsonrpc; bundle-version="0.19.0.v20221118-0359"
+              org.eclipse.lsp4j.jsonrpc [248]
+                Unresolved requirement: Import-Package: com.google.gson; version="[2.9.1,2.10.0)"
+  Unresolved requirement: Require-Bundle: org.eclipse.lsp4j.jsonrpc; bundle-version="0.12.0"
+    -> Bundle-SymbolicName: org.eclipse.lsp4j.jsonrpc; bundle-version="0.19.0.v20221118-0359"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jface.text 2 0 2023-09-03 16:33:28.226
+!MESSAGE 重複テンプレート ID: 'zigen.plugin.db.template.sql.case'
